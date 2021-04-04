@@ -1,9 +1,9 @@
 **Instructions to get the Website Running in Development** 
 
-To Start the Backend: 
-cd western_ai
-cd api 
-python3 -m venv venv
+To Start the Backend:
+\n cd western_ai
+\n cd api 
+\n python3 -m venv venv
 source venv/bin/activate
 flask run
 
