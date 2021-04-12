@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Heading from './Navbar'
 
 function App() {
-  const [image, setImage] = useState({ preview: "", raw: "" });
+  const [image, setImage] = useState();
   const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
@@ -15,6 +15,12 @@ function App() {
 
   const uploadImage = e => {
     setImage(e.target.files[0])
+    fetch('/model', {
+      method: "POST", 
+      mode:"cors",
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({image: {image}})
+    })
   }
 
   return (
